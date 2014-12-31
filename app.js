@@ -17,5 +17,8 @@ var app = express();
 
 require('./config/express')(app, config);
 
+// Bootstrap passport config
+require('./config/passport')();
+
 app.listen(config.port);
 

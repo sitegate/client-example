@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var swig = require('swig');
+var passport = require('passport');
 
 module.exports = function(app, config) {
   app.engine('swig', swig.renderFile)
@@ -24,6 +25,10 @@ module.exports = function(app, config) {
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
+
+  // use passport session
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   var routes = glob.sync(config.root + '/app/routes/*.js');
   routes.forEach(function (route) {

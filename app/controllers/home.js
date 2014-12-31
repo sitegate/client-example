@@ -8,7 +8,8 @@ exports.get = function (req, res, next) {
     if (err) return next(err);
     res.render('index', {
       title: 'Generator-Express MVC',
-      articles: articles
+      articles: articles,
+      user: req.user
     });
   });
 };
