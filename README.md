@@ -13,4 +13,4 @@ Add this line to your hosts file.
 ```
 Run both the SiteGate server and the SiteGate client example.
 
-Open http://sitegate.local:3001
+Open http://sitegatedev.com:3001
