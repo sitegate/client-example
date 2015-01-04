@@ -11,7 +11,10 @@ var config = {
     port: 3001,
     db: 'mongodb://localhost/sesame-client-example-development',
     sessionSecret: 'sesame-client-example',
-    sessionCollection: 'sessions'
+    sessionCollection: 'sessions',
+    sitegate: {
+      domain: 'http://account.sitegatedev.com:3000'
+    }
   },
 
   test: {

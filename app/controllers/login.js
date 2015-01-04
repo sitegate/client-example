@@ -1,11 +1,12 @@
 var request = require('request'),
-  User = require('mongoose').model('User');
+  User = require('mongoose').model('User'),
+  config = require('../../config/config');
 
 exports.get = function (req, res, next) {
   if (!req.query.token) {
     return res.status(401);
   }
-  request('http://account.sitegatedev.com:3000/api/user-info?token=' + req.query.token, function (err, response, body) {
+  request(config.sitegate.domain + '/api/user-info?token=' + req.query.token, function (err, response, body) {
     if (err) return next(err);
 
     var userInfo = JSON.parse(body);
