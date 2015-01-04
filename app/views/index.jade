@@ -1,0 +1,33 @@
+extends ./layout.jade
+
+block content
+  h1= title
+  p Welcome to 
+    = title
+  div(class="ui segment")
+    if user
+      h1(class="ui header") You are signed in
+      p Your username is 
+        strong= user.username
+      p Your email is 
+        strong= user.email
+      h2(class="ui header") Possible actions
+      a() Sign out
+      a() Settings
+    else
+      h1(class="ui header") You are not signed in
+      a(class="ui left icon blue button", href="http://localhost:3000/signin?callbackUrl=http://localhost:3001/login")
+        i(class="sign in icon")
+        |Sign In
+      a(class="ui left icon blue button", href="http://localhost:3000/signup?callbackUrl=http://localhost:3001/login")
+        i(class="signup icon")
+        |Sign Up
+      a(class="ui facebook button", href="/auth/facebook")
+        i(class="facebook icon")
+        |Facebook
+      a(class="ui twitter button", href="/auth/twitter")
+        i(class="twitter icon")
+        |Twitter
+      a(class="ui google plus button", href="/auth/google")
+        i(class="google plus icon")
+        |Google Plus

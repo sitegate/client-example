@@ -8,16 +8,14 @@ var express = require('express'),
   MongoStore = require('connect-mongo')(session),
   compress = require('compression'),
   methodOverride = require('method-override'),
-  swig = require('swig'),
   passport = require('passport'),
   config = require('./config');
 
 module.exports = function(db) {
   var app = express();
 
-  app.engine('swig', swig.renderFile)
   app.set('views', config.root + '/app/views');
-  app.set('view engine', 'swig');
+  app.set('view engine', 'jade');
 
   // app.use(favicon(config.root + '/public/img/favicon.ico'));
   app.use(logger('dev'));
