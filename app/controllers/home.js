@@ -4,7 +4,7 @@ var express = require('express'),
 
 exports.get = function (req, res, next) {
   res.render('index', {
-    title: 'Generator-Express MVC',
+    title: 'This is an Example of a SiteGate Client',
     user: req.user,
     sitegateDomain: config.sitegate.domain
   });

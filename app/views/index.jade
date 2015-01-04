@@ -2,20 +2,22 @@ extends ./layout.jade
 
 block content
   h1= title
-  p Welcome to 
-    = title
   div(class="ui segment")
     if user
-      h1(class="ui header") You are signed in
+      h2(class="ui header") You are signed in
       p Your username is 
         strong= user.username
       p Your email is 
         strong= user.email
       h2(class="ui header") Possible actions
-      a(class="ui button", href=sitegateDomain + "/signout?callbackUrl=http://sitegatedev.com:3001/signout") Sign out
-      a(class="ui button", href=sitegateDomain + "/settings") Settings
+      a(class="ui button", href=sitegateDomain + "/signout?callbackUrl=http://sitegatedev.com:3001/signout")
+        i(class="sign out icon")
+        |Sign out
+      a(class="ui button", href=sitegateDomain + "/settings")
+        i(class="settings icon")
+        |Settings
     else
-      h1(class="ui header") You are not signed in
+      h2(class="ui header") You are not signed in
       a(class="ui left icon blue button", href=sitegateDomain + "/signin?callbackUrl=http://sitegatedev.com:3001/login")
         i(class="sign in icon")
         |Sign In
