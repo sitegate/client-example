@@ -1,16 +1,20 @@
-var express = require('express');
-var glob = require('glob');
+var express = require('express'),
+  glob = require('glob'),
+  favicon = require('serve-favicon'),
+  logger = require('morgan'),
+  cookieParser = require('cookie-parser'),
+  bodyParser = require('body-parser'),
+  session = require('express-session'),
+  MongoStore = require('connect-mongo')(session),
+  compress = require('compression'),
+  methodOverride = require('method-override'),
+  swig = require('swig'),
+  passport = require('passport'),
+  config = require('./config');
 
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var compress = require('compression');
-var methodOverride = require('method-override');
-var swig = require('swig');
-var passport = require('passport');
+module.exports = function(db) {
+  var app = express();
 
-module.exports = function(app, config) {
   app.engine('swig', swig.renderFile)
   app.set('views', config.root + '/app/views');
   app.set('view engine', 'swig');
@@ -22,6 +26,18 @@ module.exports = function(app, config) {
     extended: true
   }));
   app.use(cookieParser());
+
+  // Express MongoDB session storage
+  app.use(session({
+    saveUninitialized: true,
+    resave: true,
+    secret: config.sessionSecret,
+    store: new MongoStore({
+      mongooseConnection: db.connection,
+      collection: config.sessionCollection
+    })
+  }));
+
   app.use(compress());
   app.use(express.static(config.root + '/public'));
   app.use(methodOverride());
@@ -61,4 +77,5 @@ module.exports = function(app, config) {
     });
   });
 
+  return app;
 };

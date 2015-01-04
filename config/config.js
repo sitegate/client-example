@@ -9,8 +9,9 @@ var config = {
       name: 'sesame-client-example'
     },
     port: 3001,
-    db: 'mongodb://localhost/sesame-client-example-development'
-    
+    db: 'mongodb://localhost/sesame-client-example-development',
+    sessionSecret: 'sesame-client-example',
+    sessionCollection: 'sessions'
   },
 
   test: {
@@ -19,8 +20,9 @@ var config = {
       name: 'sesame-client-example'
     },
     port: 3001,
-    db: 'mongodb://localhost/sesame-client-example-test'
-    
+    db: 'mongodb://localhost/sesame-client-example-test',
+    sessionSecret: 'sesame-client-example',
+    sessionCollection: 'sessions'
   },
 
   production: {
@@ -29,8 +31,9 @@ var config = {
       name: 'sesame-client-example'
     },
     port: 3001,
-    db: 'mongodb://localhost/sesame-client-example-production'
-    
+    db: 'mongodb://localhost/sesame-client-example-production',
+    sessionSecret: 'sesame-client-example',
+    sessionCollection: 'sessions'
   }
 };
 
