@@ -9,7 +9,7 @@ Installation
 ============
 Add this line to your hosts file.
 ```
-127.0.0.1 sitegate.local account.sitegate.local
+127.0.0.1 sitegatedev.com
 ```
 Run both the SiteGate server and the SiteGate client example.
 
