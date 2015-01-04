@@ -12,22 +12,22 @@ block content
       p Your email is 
         strong= user.email
       h2(class="ui header") Possible actions
-      a() Sign out
-      a() Settings
+      a(class="ui button", href="//account.sitegate.local:3000/signout?callbackUrl=http://sitegate.local:3001/signout") Sign out
+      a(class="ui button", href="//account.sitegate.local:3000/settings") Settings
     else
       h1(class="ui header") You are not signed in
-      a(class="ui left icon blue button", href="http://localhost:3000/signin?callbackUrl=http://localhost:3001/login")
+      a(class="ui left icon blue button", href="http://account.sitegate.local:3000/signin?callbackUrl=http://sitegate.local:3001/login")
         i(class="sign in icon")
         |Sign In
-      a(class="ui left icon blue button", href="http://localhost:3000/signup?callbackUrl=http://localhost:3001/login")
+      a(class="ui left icon blue button", href="http://account.sitegate.local:3000/signup?callbackUrl=http://sitegate.local:3001/login")
         i(class="signup icon")
         |Sign Up
-      a(class="ui facebook button", href="/auth/facebook")
+      a(class="ui facebook button", href="http://account.sitegate.local/auth/facebook?callbackUrl=http://sitegate.local:3001/login")
         i(class="facebook icon")
         |Facebook
-      a(class="ui twitter button", href="/auth/twitter")
+      a(class="ui twitter button", href="http://account.sitegate.local/auth/twitter?callbackUrl=http://sitegate.local:3001/login")
         i(class="twitter icon")
         |Twitter
-      a(class="ui google plus button", href="/auth/google")
+      a(class="ui google plus button", href="http://account.sitegate.local/auth/google?callbackUrl=http://sitegate.local:3001/login")
         i(class="google plus icon")
         |Google Plus
