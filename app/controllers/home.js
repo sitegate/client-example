@@ -1,6 +1,8 @@
-var express = require('express'),
-  router = express.Router(),
-  config = require('../../config/config');
+'use strict';
+
+var express = require('express');
+var router = express.Router();
+var config = require('../../config/config');
 
 exports.get = function (req, res, next) {
   res.render('index', {

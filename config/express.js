@@ -1,17 +1,19 @@
-var express = require('express'),
-  glob = require('glob'),
-  favicon = require('serve-favicon'),
-  logger = require('morgan'),
-  cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser'),
-  session = require('express-session'),
-  MongoStore = require('connect-mongo')(session),
-  compress = require('compression'),
-  methodOverride = require('method-override'),
-  passport = require('passport'),
-  config = require('./config');
+'use strict';
 
-module.exports = function(db) {
+var express = require('express');
+var glob = require('glob');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+var compress = require('compression');
+var methodOverride = require('method-override');
+var passport = require('passport');
+var config = require('./config');
+
+module.exports = function (db) {
   var app = express();
 
   app.set('views', config.root + '/app/views');
@@ -55,7 +57,7 @@ module.exports = function(db) {
     next(err);
   });
 
-  if(app.get('env') === 'development'){
+  if (app.get('env') === 'development') {
     app.use(function (err, req, res, next) {
       res.status(err.status || 500);
       res.render('error', {

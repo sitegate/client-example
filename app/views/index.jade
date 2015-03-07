@@ -2,34 +2,34 @@ extends ./layout.jade
 
 block content
   h1= title
-  div(class="ui segment")
+  .ui.segment
     if user
-      h2(class="ui header") You are signed in
+      h2.ui.header You are signed in
       p Your username is 
-        strong= user.username
+        span.ui.purple.horizontal.label= user.username
       p Your email is 
-        strong= user.email
-      h2(class="ui header") Possible actions
-      a(class="ui button", href=sitegateDomain + "/signout?callbackUrl=http://sitegatedev.com:3001/signout")
-        i(class="sign out icon")
+        span.ui.purple.horizontal.label= user.email
+      h2.ui.header Possible actions
+      a.ui.button(href=sitegateDomain + "/signout?callbackUrl=http://sitegatedev.com:3001/signout")
+        i.sign.out.icon
         |Sign out
-      a(class="ui button", href=sitegateDomain + "/settings")
-        i(class="settings icon")
+      a.ui.button(href=sitegateDomain + "/settings")
+        i.settings.icon
         |Settings
     else
-      h2(class="ui header") You are not signed in
-      a(class="ui left icon blue button", href=sitegateDomain + "/signin?callbackUrl=http://sitegatedev.com:3001/login")
-        i(class="sign in icon")
+      h2.ui.header You are not signed in
+      a.ui.left.icon.blue.button(href=sitegateDomain + "/signin?callbackUrl=http://sitegatedev.com:3001/login")
+        i.sign.in.icon
         |Sign In
-      a(class="ui left icon blue button", href=sitegateDomain + "/signup?callbackUrl=http://sitegatedev.com:3001/login")
-        i(class="signup icon")
+      a.ui.left.icon.blue.button(href=sitegateDomain + "/signup?callbackUrl=http://sitegatedev.com:3001/login")
+        i.signup.icon
         |Sign Up
-      a(class="ui facebook button", href=sitegateDomain + "/auth/facebook?callbackUrl=http://sitegatedev.com:3001/login")
-        i(class="facebook icon")
+      a.ui.facebook.button(href=sitegateDomain + "/auth/facebook?callbackUrl=http://sitegatedev.com:3001/login")
+        i.facebook.icon
         |Facebook
-      a(class="ui twitter button", href=sitegateDomain + "/auth/twitter?callbackUrl=http://sitegatedev.com:3001/login")
-        i(class="twitter icon")
+      a.ui.twitter.button(href=sitegateDomain + "/auth/twitter?callbackUrl=http://sitegatedev.com:3001/login")
+        i.twitter.icon
         |Twitter
-      a(class="ui google plus button", href=sitegateDomain + "/auth/google?callbackUrl=http://sitegatedev.com:3001/login")
-        i(class="google plus icon")
+      a.ui.google.plus.button(href=sitegateDomain + "/auth/google?callbackUrl=http://sitegatedev.com:3001/login")
+        i.google.plus.icon
         |Google Plus
