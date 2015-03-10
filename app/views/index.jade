@@ -10,7 +10,7 @@ block content
       p Your email is 
         span.ui.purple.horizontal.label= user.email
       h2.ui.header Possible actions
-      a.ui.button(href=sitegateDomain + "/signout?callbackUrl=http://sitegatedev.com:3001/signout")
+      a.ui.button(href="/signout")
         i.sign.out.icon
         |Sign out
       a.ui.button(href=sitegateDomain + "/settings")
@@ -18,18 +18,6 @@ block content
         |Settings
     else
       h2.ui.header You are not signed in
-      a.ui.left.icon.blue.button(href=sitegateDomain + "/signin?callbackUrl=http://sitegatedev.com:3001/login")
+      a.ui.left.icon.blue.button(href="/auth/sitegate")
         i.sign.in.icon
-        |Sign In
-      a.ui.left.icon.blue.button(href=sitegateDomain + "/signup?callbackUrl=http://sitegatedev.com:3001/login")
-        i.signup.icon
-        |Sign Up
-      a.ui.facebook.button(href=sitegateDomain + "/auth/facebook?callbackUrl=http://sitegatedev.com:3001/login")
-        i.facebook.icon
-        |Facebook
-      a.ui.twitter.button(href=sitegateDomain + "/auth/twitter?callbackUrl=http://sitegatedev.com:3001/login")
-        i.twitter.icon
-        |Twitter
-      a.ui.google.plus.button(href=sitegateDomain + "/auth/google?callbackUrl=http://sitegatedev.com:3001/login")
-        i.google.plus.icon
-        |Google Plus
+        |Sign In/Up

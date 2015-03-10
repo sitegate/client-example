@@ -19,7 +19,9 @@
     "request": "~2.51.0",
     "express-session": "~1.9.3",
     "connect-mongo": "~0.5.3",
-    "jade": "~1.8.2"
+    "jade": "~1.8.2",
+    "passport-oauth2": "~1.1.2",
+    "passport-sitegate": "0.0.1"
   },
   "devDependencies": {
     "gulp": "~3.8.10",

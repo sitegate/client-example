@@ -25,6 +25,13 @@ var validateLocalStrategyPassword = function (password) {
  * User Schema
  */
 var UserSchema = new Schema({
+  sitegateId: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  accessToken: String,
+  refreshToken: String,
   firstName: {
     type: String,
     trim: true,
@@ -56,7 +63,7 @@ var UserSchema = new Schema({
     type: [{
       type: String,
       enum: ['user', 'admin']
-  }],
+    }],
     default: ['user']
   },
   updated: {

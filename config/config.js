@@ -9,11 +9,14 @@ var config = {
       name: 'sesame-client-example'
     },
     port: 3001,
-    db: 'mongodb://localhost/sesame-client-example-development',
+    db: 'mongodb://localhost/sitegate-client-example-development',
     sessionSecret: 'sesame-client-example',
     sessionCollection: 'sessions',
     sitegate: {
-      domain: 'http://account.sitegatedev.com:3000'
+      domain: 'http://account.sitegatedev.com:3000',
+      clientId: 'K2fqgHNhGFGKBQtE7V7o',
+      clientSecret: 'AgmkWLx5tv2QfzUEYAvdAvdsrcG70oK7xl2vmCUS',
+      callbackURL: 'http://sitegatedev.com:3001/auth/sitegate/callback'
     }
   },
 
@@ -23,7 +26,7 @@ var config = {
       name: 'sesame-client-example'
     },
     port: 3001,
-    db: 'mongodb://localhost/sesame-client-example-test',
+    db: 'mongodb://localhost/sitegate-client-example-test',
     sessionSecret: 'sesame-client-example',
     sessionCollection: 'sessions'
   },
@@ -34,7 +37,7 @@ var config = {
       name: 'sesame-client-example'
     },
     port: 3001,
-    db: 'mongodb://localhost/sesame-client-example-production',
+    db: 'mongodb://localhost/sitegate-client-example-production',
     sessionSecret: 'sesame-client-example',
     sessionCollection: 'sessions'
   }
