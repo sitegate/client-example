@@ -1,4 +1,4 @@
-sitegate-client-example
+sitegate-client-example [![Build Status](http://img.shields.io/travis/zkochan/sitegate-client-example.svg?style=flat)](https://travis-ci.org/zkochan/sitegate-client-example)
 =======================
 
 A sample **Node.js Express** application that shows how to use **SiteGate** for user authentication/registration.
