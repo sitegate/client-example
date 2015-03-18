@@ -1,13 +1,13 @@
-var gulp = require('gulp'),
-  nodemon = require('gulp-nodemon'),
-  livereload = require('gulp-livereload'),
-  less = require('gulp-less');
+var gulp = require('gulp');
+var nodemon = require('gulp-nodemon');
+var livereload = require('gulp-livereload');
+var less = require('gulp-less');
 
 gulp.task('less', function () {
   gulp.src('./public/css/*.less')
     .pipe(less())
     .pipe(gulp.dest('./public/dest/css'))
-    .pipe(livereload());
+    .pipe(livereload(31433));
 });
 
 gulp.task('watch', function() {
@@ -15,7 +15,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('develop', function () {
-  livereload.listen();
+  livereload.listen(31433);
   nodemon({
     script: 'app.js',
     ext: 'js jade',
