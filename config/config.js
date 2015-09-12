@@ -1,3 +1,5 @@
+'use strict';
+
 var path = require('path');
 var rootPath = path.normalize(__dirname + '/..');
 var env = process.env.NODE_ENV || 'development';
@@ -18,8 +20,8 @@ var config = {
     sessionCollection: 'sessions',
     sitegate: {
       domain: 'https://account.sitegatedev.com:3000',
-      clientId: 'K2fqgHNhGFGKBQtE7V7o',
-      clientSecret: 'AgmkWLx5tv2QfzUEYAvdAvdsrcG70oK7xl2vmCUS',
+      clientId: 'AoMFA3Z1XvwtLj9558cC',
+      clientSecret: 'X5iKRIPQICq0Hye2WqQX3GJWWR2AXD1nXwEfm6tq',
       callbackURL: 'http://sitegatedev.com:3001/auth/sitegate/callback'
     }
   },

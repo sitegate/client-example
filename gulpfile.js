@@ -1,33 +1,36 @@
+'use strict';
+
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
-var livereload = require('gulp-livereload');
-var less = require('gulp-less');
+var foso = require('foso');
+var js = require('fosify-js');
+var sass = require('fosify-sass');
 
-gulp.task('less', function () {
-  gulp.src('./public/css/*.less')
-    .pipe(less())
-    .pipe(gulp.dest('./public/dest/css'))
-    .pipe(livereload(31433));
-});
+gulp.task('develop', function() {
+  foso
+    .please({
+      src: './public/src',
+      dest: './public/dist',
+      watch: true,
+      esnext: true,
+      livereload: {
+        port: 3143
+      }
+    })
+    .fosify(js)
+    .fosify(sass)
+    .now();
 
-gulp.task('watch', function() {
-  gulp.watch('./public/css/*.less', ['less']);
-});
-
-gulp.task('develop', function () {
-  livereload.listen(31433);
   nodemon({
     script: 'app.js',
     ext: 'js jade',
-  }).on('restart', function () {
-    setTimeout(function () {
-      livereload.changed();
+  }).on('restart', function() {
+    setTimeout(function() {
+      foso.changed();
     }, 500);
   });
 });
 
 gulp.task('default', [
-  'less',
-  'develop',
-  'watch'
+  'develop'
 ]);
