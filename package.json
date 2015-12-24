@@ -11,28 +11,28 @@
     "url": "http://kochan.io"
   },
   "dependencies": {
-    "body-parser": "~1.10.0",
-    "compression": "~1.2.2",
-    "connect-mongo": "~0.5.3",
-    "cookie-parser": "~1.3.3",
-    "express": "~4.10.6",
-    "express-session": "~1.9.3",
-    "glob": "~4.3.1",
-    "jade": "~1.8.2",
-    "method-override": "~2.3.0",
+    "body-parser": "^1.10.0",
+    "compression": "^1.2.2",
+    "connect-mongo": "^0.5.3",
+    "cookie-parser": "^1.3.3",
+    "express": "^4.10.6",
+    "express-session": "^1.9.3",
+    "glob": "^4.3.1",
+    "jade": "^1.8.2",
+    "method-override": "^2.3.0",
     "mongoose": "^4.1.6",
-    "morgan": "~1.5.0",
-    "passport": "~0.2.1",
-    "passport-oauth2": "~1.1.2",
-    "passport-sitegate": "0.0.1",
-    "request": "~2.51.0",
-    "serve-favicon": "~2.1.7"
+    "morgan": "^1.5.0",
+    "passport": "^0.2.1",
+    "passport-oauth2": "^1.1.2",
+    "passport-sitegate": "0.0.2",
+    "request": "^2.51.0",
+    "serve-favicon": "^2.1.7"
   },
   "devDependencies": {
     "fosify-js": "^0.6.0",
     "fosify-sass": "^0.1.1",
     "foso": "^0.10.1",
-    "gulp": "~3.8.10",
-    "gulp-nodemon": "~1.0.4"
+    "gulp": "^3.8.10",
+    "gulp-nodemon": "^1.0.4"
   }
 }
