@@ -19,10 +19,10 @@ var config = {
     sessionSecret: 'sitegate-client-example',
     sessionCollection: 'sessions',
     sitegate: {
-      domain: 'https://account.sitegatedev.com:3000',
+      domain: 'http://localhost:3000',
       clientId: 'AoMFA3Z1XvwtLj9558cC',
       clientSecret: 'X5iKRIPQICq0Hye2WqQX3GJWWR2AXD1nXwEfm6tq',
-      callbackURL: 'http://sitegatedev.com:3001/auth/sitegate/callback'
+      callbackURL: 'http://localhost:3001/auth/sitegate/callback'
     }
   },
 
