@@ -13,7 +13,7 @@ var methodOverride = require('method-override');
 var passport = require('passport');
 var config = require('./config');
 
-module.exports = function (db) {
+module.exports = function(db) {
   var app = express();
 
   app.set('views', config.root + '/app/views');
@@ -47,18 +47,18 @@ module.exports = function (db) {
   app.use(passport.session());
 
   var routes = glob.sync(config.root + '/app/routes/*.js');
-  routes.forEach(function (route) {
+  routes.forEach(function(route) {
     require(route)(app);
   });
 
-  app.use(function (req, res, next) {
+  app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
   });
 
   if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
+    app.use(function(err, req, res, next) {
       res.status(err.status || 500);
       res.render('error', {
         message: err.message,
@@ -68,7 +68,7 @@ module.exports = function (db) {
     });
   }
 
-  app.use(function (err, req, res, next) {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,

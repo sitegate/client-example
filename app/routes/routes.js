@@ -5,7 +5,7 @@ var signout = require('../controllers/signout');
 var auth = require('../controllers/auth');
 var passport = require('passport');
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.route('/')
     .get(home.get);
 

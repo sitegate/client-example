@@ -5,17 +5,17 @@ var User = require('mongoose').model('User');
 var SiteGateStrategy = require('passport-sitegate');
 var config = require('./config');
 
-module.exports = function () {
+module.exports = function() {
   // Serialize sessions
-  passport.serializeUser(function (user, done) {
+  passport.serializeUser(function(user, done) {
     done(null, user._id);
   });
 
   // Deserialize sessions
-  passport.deserializeUser(function (id, done) {
+  passport.deserializeUser(function(id, done) {
     User.findOne({
       _id: id
-    }, '-salt -password', function (err, user) {
+    }, '-salt -password', function(err, user) {
       done(err, user);
     });
   });
@@ -26,10 +26,10 @@ module.exports = function () {
       clientSecret: config.sitegate.clientSecret,
       callbackURL: config.sitegate.callbackURL
     },
-    function (accessToken, refreshToken, profile, done) {
+    function(accessToken, refreshToken, profile, done) {
       User.findOne({
         sitegateId: profile.id
-      }, function (err, user) {
+      }, function(err, user) {
         if (err) {
           return done(err, null);
         }
@@ -41,7 +41,7 @@ module.exports = function () {
           user.accessToken = accessToken;
           user.refreshToken = refreshToken;
 
-          user.save(function (err, user) {
+          user.save(function(err, user) {
             if (err) {
               return done(err, null);
             }
